@@ -63,7 +63,7 @@ public class Main {
         }
     }
 }
-
+// input:- 
 // Dagger
 // Valyrian
 // 20
@@ -72,3 +72,24 @@ public class Main {
 // 15
 // 5
 // 100
+
+// output:-
+// enter p1: 
+// dagger
+// enter p2: 
+// valriyan
+// START
+// Player Attacked Using: dagger
+// Enemy Parried Using: valriyan
+// GAME OVER
+// ***SUMMARY***
+// Sword Name: dagger
+// Piercing Damage :20
+// Slashing Damage: 10
+// Player XP: 95
+// Sword Name: valriyan
+// Piercing Damage :15
+// Slashing Damage: 5
+// Player XP: 80
+// WINNER: dagger
+
