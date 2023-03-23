@@ -54,10 +54,10 @@
 
 import java.lang.*;
 import java.util.*;
-public class Main {
+public class Pat1 {
     String swordName;
     int piercingDamage,slashingDamage,playerXP;
-    public Main(String sn) {
+    public Pat1(String sn) {
         swordName=sn;
     }
     static void startTheGame() {
@@ -90,8 +90,8 @@ public class Main {
         System.out.println("enter p2: ");
         String s2=s.next();
 
-        Main player1= new Main(s1);
-        Main player2= new Main(s2);
+        Pat1 player1= new Pat1(s1);
+        Pat1 player2= new Pat1(s2);
         
         startTheGame();
       
