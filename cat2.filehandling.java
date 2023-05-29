@@ -141,3 +141,128 @@ public class CreateWriteReadFile {
         }
     }
 }
+
+
+//line,chr,word count 
+//copy image from one file to another
+import java.io.*;
+import java.util.*;
+public class HelloWorld {
+
+    public static void main(String []args) {
+        try {
+            File obj=new File("yuva.txt");
+            obj.createNewFile();
+        } catch(IOException e) {
+
+            System.out.println("Herror 1");
+        }
+
+        try {
+            FileWriter wobj=new FileWriter("yuva.txt");
+            wobj.write("im yuva. \nhello. \nhow are you?");
+            wobj.close();
+        } catch(IOException e) {
+
+            System.out.println("Herror 2");
+        }
+
+//=====================
+        BufferedReader reader = null;
+         
+        //Initializing charCount, wordCount and lineCount to 0
+         
+        int charCount = 0;
+         
+        int wordCount = 0;
+         
+        int lineCount = 0;
+        try{
+            reader = new BufferedReader(new FileReader("yuva.txt"));
+
+        //Reading the first line into currentLine
+
+        String currentLine = reader.readLine();
+
+        while (currentLine != null) {
+            //Updating the lineCount
+
+            lineCount++;
+
+            //Getting number of words in currentLine
+
+            String[] words = currentLine.split(" ");
+
+            //Updating the wordCount
+
+            wordCount = wordCount + words.length;
+
+            //Iterating each word
+
+            for (String word : words) {
+                //Updating the charCount
+
+                charCount = charCount + word.length();
+                
+            }
+
+            System.out.println(currentLine);
+            //Reading next line into currentLine
+            currentLine = reader.readLine();
+            
+        }
+
+        //Printing charCount, wordCount and lineCount
+
+        System.out.println("Number Of Chars In A File : "+charCount);
+
+        System.out.println("Number Of Words In A File : "+wordCount);
+
+        System.out.println("Number Of Lines In A File : "+lineCount);
+    }
+    catch(IOException e) {
+
+            System.out.println("Herror 3");
+        }
+
+
+}
+}
+//to copy image
+//  try{
+//      FileInputStream in=new FileInputStream("yuva.txt");
+//      FileOutputStream out=new FileOutputStream("jeni.txt");
+
+//      int content=in.read();
+//      while(content!=-1){
+//          out.write(content);
+//          content=in.read();
+//      }
+//      out.flush();
+//      in.close();
+//      out.close();
+
+//  }
+
+//  catch(Exception e){
+
+//   System.out.println("Herror");
+//  }
+
+//  using scanner to read
+// try{
+//      File robj=new File("yuva.txt");
+//      Scanner s=new Scanner(robj);
+//      int lc=0,chr=0,w=0;
+//      while(s.hasNextLine()){
+//          lc++;
+//          chr+=s.length;
+//          String[] word= s.split(" ");
+//          w+=word.length;
+//          System.out.println(s.nextLine());
+//      }
+//      System.out.println(lc);
+//      System.out.println(chr);
+//      System.out.println(w);
+//  }
+
